@@ -5,7 +5,10 @@ import "./globals.css";
 const body = Nunito({ subsets: ["latin"], variable: "--font-body" });
 const display = Playfair_Display({ subsets: ["latin"], style: ["italic"], weight: ["700"], variable: "--font-display" });
 
-export const metadata: Metadata = { title: "MeBatch", description: "Share files or text with a short code. No account needed." };
+export const metadata = {
+  title: "MeBatch",
+  description: "Share text or files between devices with no account. Short code, auto-expiring.",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

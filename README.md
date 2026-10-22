@@ -255,16 +255,12 @@ Reference: the MeLife screen from Inanimate Insanity: thick lavender-gray bezel,
 
 ## 7. Known issues / TODO
 
-- **First-visit mascot popup is not built.** Hooks: `{/* TODO: <IntroPopup /> */}` near the top of `page.tsx`, and a "Replay intro" TODO in the footer. Spec: several short dialogue steps (mascot changes pose each step), Next / Back / Skip / "Let's go", remembers via `mebatch_intro_seen`, wrapped in try/catch. Draft lines: "Hi! I'm MeBatch." (waving) / "Toss files or text, get a code." (tossing) / "Share the code or the QR." (pointing) / "Everything expires on its own." (clock) / "Ready?" (celebrating).
-- **Mascot art:** placeholders only.
-- **Large images (> 5 MB)** show no preview; the spec's "Tap to preview" button is not built.
-- **Video previews** cost Supabase egress (browser may fetch more than the first frame). If egress climbs, switch to a tap-to-preview button.
-- **Latest `BatchCard` action row uses classes that may not exist:**
-  - `xs:` is **not** a default Tailwind breakpoint. Define it in `globals.css` (Tailwind v4): `@theme { --breakpoint-xs: 30rem; }`, otherwise `xs:grid xs:grid-cols-2` does nothing.
-  - `col-span-none` is **not** a Tailwind class; use `sm:col-auto` instead.
-  - `btn-gray` is **not defined**; add `.btn-gray { background-color: #ddd; }` to `globals.css` or remove it.
+- **Mascot art:** placeholders only. The first-visit popup (`components/IntroPopup.tsx`) is built; swap each `[mascot: pose]` box for an `<img>`. `replayIntro()` is exported for the footer button.
+- **Large images (> 5 MB)** show no preview; "Tap to preview" is not built.
+- **Video previews** cost Supabase egress. If it climbs, switch to a tap-to-preview button.
 - If uploads return 401, add header `apikey: NEXT_PUBLIC_SUPABASE_ANON_KEY` on the XHR (should not normally be needed for signed URLs).
-- A failed/abandoned upload leaves its batch row behind until the daily cron cleans it up.
+- A failed/abandoned upload leaves its batch row until the daily cron cleans it up.
+- Fan project: keep it free and non-commercial, with the "not affiliated" footer line.
 - Out of scope for v1: phone share-sheet, passwords, adding files to an existing batch, dark mode, accounts/analytics.
 
 ---

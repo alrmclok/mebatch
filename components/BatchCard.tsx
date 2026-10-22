@@ -169,7 +169,7 @@ export default function BatchCard({
       );
       a.download = `${b.slug}.zip`;
       a.click();
-      URL.revokeObjectURL(a.href);
+      setTimeout(() => URL.revokeObjectURL(a.href), 10000);
     } catch (e: any) {
       flash(e.message);
     }
@@ -247,7 +247,7 @@ export default function BatchCard({
         return (
           <div key={f.id} className="rounded-xl bg-[var(--pearl)] p-2">
             <div className="flex items-center gap-3">
-              <Orb icon={Icon} color={color} size={40} />
+              <Orb icon={Icon} color={color} size={40} wobble />
               <span className="min-w-0 flex-1 truncate font-semibold">
                 {f.name}
               </span>

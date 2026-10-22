@@ -17,7 +17,7 @@ export default function FileThumb({ file, size = 44 }: { file: File; size?: numb
 
   if (!url || bad) {
     const { Icon, color } = fileIcon(file.name, file.type);
-    return <Orb icon={Icon} color={color} size={size} />;
+    return <Orb icon={Icon} color={color} size={size} wobble />;
   }
   const cls = "shrink-0 rounded-lg bg-black object-cover ring-1 ring-black/20";
   const style = { width: size, height: size };

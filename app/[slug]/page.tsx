@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import Window from "@/components/Window";
 import BatchView from "./BatchView";
 
+export const metadata = { robots: { index: false, follow: false } };
+
 async function Inner({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   return <BatchView slug={decodeURIComponent(slug).toLowerCase()} />;

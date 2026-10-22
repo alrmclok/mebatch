@@ -242,15 +242,15 @@ export default function Home() {
       )}
       <IntroPopup />
 
-      <div className="flex justify-center gap-3">
+      <div className="flex justify-center items-start gap-3 pb-1">
         <button
-          className={`btn btn-green flex-1 sm:flex-none ${tab !== "send" && "dim"}`}
+          className={`btn btn-green flex-1 sm:flex-none ${tab !== "send" ? "dim" : ""}`}
           onClick={() => setTab("send")}
         >
           <Upload size={20} /> Send
         </button>
         <button
-          className={`btn btn-cyan flex-1 sm:flex-none ${tab !== "receive" && "dim"}`}
+          className={`btn btn-cyan flex-1 sm:flex-none ${tab !== "receive" ? "dim" : ""}`}
           onClick={() => setTab("receive")}
         >
           <Download size={20} /> Receive
@@ -288,7 +288,7 @@ export default function Home() {
                   aria-pressed={mode === m}
                   className={`flex min-h-11 flex-col items-center gap-1 rounded-2xl p-2 ${mode === m ? "bg-[#e3e0f5] ring-2 ring-[#8f8aae]" : "opacity-70"}`}
                 >
-                  <Orb icon={Icon} color={color} size={52} />
+                  <Orb icon={Icon} color={color} size={52} wobble />
                   <span className="text-xs font-bold sm:text-sm">
                     {LABEL[m]}
                   </span>
@@ -386,7 +386,7 @@ export default function Home() {
                 {f ? (
                   <FileThumb file={f} size={44} />
                 ) : (
-                  <Orb icon={Icon} color={color} size={44} />
+                  <Orb icon={Icon} color={color} size={44} wobble />
                 )}
                 <span className="min-w-0 flex-1 truncate">{j.name}</span>
                 <span className="text-xs tabular-nums">{j.pct}%</span>
@@ -531,7 +531,7 @@ export default function Home() {
                     href={`/${b.slug}`}
                     className="flex flex-col items-center gap-1 text-center"
                   >
-                    <Orb icon={Icon} color={color} size={56} />
+                    <Orb icon={Icon} color={color} size={56} wobble />
                     <span className="break-all text-xs font-bold">
                       {b.slug}
                     </span>
@@ -555,8 +555,12 @@ export default function Home() {
           </div>
         )}
       </section>
-
-      <button type="button" onClick={replayIntro} className="text-sm underline">Replay intro</button>
+      <p className="text-xs opacity-80">
+        Fan project, not affiliated with Inanimate Insanity.{" "}
+        <button type="button" onClick={replayIntro} className="underline">
+          Replay intro
+        </button>
+      </p>
     </Window>
   );
 }
