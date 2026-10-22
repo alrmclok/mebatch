@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { QRCodeSVG } from "qrcode.react";
 import FileThumb from "@/components/FileThumb";
 import CopyButton from "@/components/CopyButton";
+import IntroPopup, { replayIntro } from "@/components/IntroPopup";
 import {
   Upload,
   Download,
@@ -239,7 +240,7 @@ export default function Home() {
           Drop files to add them
         </div>
       )}
-      {/* TODO: <IntroPopup /> (first-visit mascot dialog) */}
+      <IntroPopup />
 
       <div className="flex justify-center gap-3">
         <button
@@ -256,7 +257,7 @@ export default function Home() {
         </button>
       </div>
       <p className="text-center text-sm opacity-60">
-        [mascot: {tab === "send" ? "tossing a file" : "catching"}]
+        [mascot: {tab === "send" ? "tossing a file" : "catching a file"}]
       </p>
 
       {tab === "receive" && (
@@ -555,7 +556,7 @@ export default function Home() {
         )}
       </section>
 
-      {/* TODO: <button>Replay intro</button> */}
+      <button type="button" onClick={replayIntro} className="text-sm underline">Replay intro</button>
     </Window>
   );
 }
