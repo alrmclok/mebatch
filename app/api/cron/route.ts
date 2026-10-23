@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/supabase";
+import { deleteBatch } from "@/lib/batch";
 
 const bucket = () => db.storage.from("batches");
 
@@ -10,11 +11,7 @@ export async function GET(req: Request) {
   // 1. expired batches (includes burned ones)
   const { data: expired } = await db.from("batches").select("slug")
     .lte("expires_at", new Date().toISOString());
-  for (const { slug } of expired ?? []) {
-    const { data: f } = await db.from("batch_files").select("storage_path").eq("slug", slug);
-    if (f?.length) await bucket().remove(f.map((x) => x.storage_path));
-    await db.from("batches").delete().eq("slug", slug);
-  }
+  for (const { slug } of expired ?? []) await deleteBatch(slug);
 
   // 2. orphan sweep: storage folders with no batches row
   const { data: rows } = await db.from("batches").select("slug");

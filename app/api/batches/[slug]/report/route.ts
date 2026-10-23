@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/supabase";
+const bucket = () => db.storage.from("batches");
 import { norm } from "@/lib/batch";
 import { allow, clientIp, hashOf } from "@/lib/ratelimit";
 
@@ -25,7 +26,13 @@ export async function POST(req: Request, { params }: Ctx) {
   const d = dev(deviceId);
   if (d) hashes.push(d);
   const { data } = await db.rpc("report_batch", { p_slug: slug, p_hashes: hashes, p_limit: REPORT_LIMIT });
-  return NextResponse.json({ ok: true, duplicate: data === -1, removed: data >= REPORT_LIMIT });
+  const removed = typeof data === "number" && data >= REPORT_LIMIT;
+  if (removed) {
+    // SQL already deleted the rows; clean the storage folder too
+    const { data: objs } = await bucket().list(slug, { limit: 1000 });
+    if (objs?.length) await bucket().remove(objs.map((o) => `${slug}/${o.name}`));
+  }
+  return NextResponse.json({ ok: true, duplicate: data === -1, removed });
 }
 
 export async function DELETE(req: Request, { params }: Ctx) {

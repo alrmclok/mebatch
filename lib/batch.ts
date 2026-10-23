@@ -14,3 +14,15 @@ export const isOwner = (b: { owner_hash: string }, req: Request) => {
   const k = req.headers.get("x-owner-key");
   return !!k && hashKey(k) === b.owner_hash;
 };
+
+export async function deleteBatch(slug: string) {
+  const { data: f } = await db.from("batch_files").select("storage_path").eq("slug", slug);
+  if (f?.length) await db.storage.from("batches").remove(f.map((x) => x.storage_path));
+  await db.from("batches").delete().eq("slug", slug);
+}
+
+export async function sweepExpired(graceSecs = 120, max = 20) {
+  const cutoff = new Date(Date.now() - graceSecs * 1000).toISOString();
+  const { data } = await db.from("batches").select("slug").lte("expires_at", cutoff).limit(max);
+  for (const { slug } of data ?? []) await deleteBatch(slug);
+}

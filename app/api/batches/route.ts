@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { randomBytes, randomUUID, createHash } from "crypto";
 import { db } from "@/lib/supabase";
 import { makeSlug } from "@/lib/slug";
 import { allow } from "@/lib/ratelimit";
+import { sweepExpired } from "@/lib/batch";
 
 const MB = 1024 * 1024;
 const EXPIRY = [1, 24, 72, 168];
@@ -19,6 +20,7 @@ const bad = (error: string, status = 400) =>
 export async function POST(req: Request) {
   if (!(await allow(req, "create", 10, 3600)))
     return bad("Slow down, try again later", 429);
+  after(() => sweepExpired());
   const b = await req.json().catch(() => null);
   if (!b) return bad("Bad request");
 
