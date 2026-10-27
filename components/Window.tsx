@@ -6,7 +6,7 @@ function Dot({ c, label, onClick, className = "" }: { c: string; label: string; 
   return (
     <button type="button" aria-label={label} title={label} onClick={onClick}
       className={`h-8 w-8 place-items-center rounded-full ${className || "grid"}`}>
-      <span className={`relative h-5 w-5 overflow-hidden rounded-full ring-1 ring-black/20
+      <span className={`relative h-5 w-5 overflow-hidden rounded-full ring-1 ring-black/20 cursor-pointer
         shadow-[inset_0_-3px_4px_rgba(0,0,0,.2),inset_0_0_3px_rgba(255,255,255,.9),0_1px_2px_rgba(0,0,0,.3)] ${c}`}>
         {/* white shine */}
         <span className="absolute left-[18%] top-[8%] h-[45%] w-[64%] rounded-full bg-gradient-to-b from-white/90 to-white/10" />

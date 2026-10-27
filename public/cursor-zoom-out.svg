@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="zout-face" x1="5" y1="5" x2="26" y2="27" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".58" stop-color="#F4F1FF"/><stop offset="1" stop-color="#C9C5F5"/></linearGradient>
+    <linearGradient id="zout-rim" x1="5" y1="5" x2="26" y2="27" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7477D1"/><stop offset="1" stop-color="#303365"/></linearGradient>
+  </defs>
+  <circle cx="13" cy="13" r="8" fill="#34366F" opacity=".2" transform="translate(1 1)"/>
+  <path d="M19 19L26 26" stroke="#34366F" stroke-width="3.6" stroke-linecap="round" opacity=".2" transform="translate(1 1)"/>
+  <circle cx="13" cy="13" r="8" fill="url(#zout-face)" stroke="url(#zout-rim)" stroke-width="1.7"/>
+  <path d="M19 19L26 26" fill="none" stroke="url(#zout-rim)" stroke-width="3.6" stroke-linecap="round"/>
+  <path d="M9.6 13H16.4" fill="none" stroke="url(#zout-rim)" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M8.4 10.6A5.5 5.5 0 0 1 10.8 8.2" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

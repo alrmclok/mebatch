@@ -6,28 +6,28 @@ const KEY = "mebatch_intro_seen";
 // pose = which mascot art goes here later (swap the placeholder box for an <img>)
 const STEPS = [
   {
-    pose: "waving",
+    pose: "placeholder",
     text: "Hi! I'm MeBatch.",
     description: "Your personal helper friend. /j",
   },
   {
-    pose: "tossing a file",
+    pose: "placeholder",
     text: "Toss files or text, get a code.",
     description: "No account, no signup. Just drop it in and hit Send.",
   },
   {
-    pose: "pointing",
+    pose: "placeholder",
     text: "Share the code or the QR.",
     description: "Type the code on another device, or scan the QR.",
   },
   {
-    pose: "clock",
+    pose: "placeholder",
     text: "Everything expires on its own.",
     description:
       "Pick 1 hour to 7 days. You can also burn it after the first download.",
   },
   {
-    pose: "celebrating",
+    pose: "placeholder",
     text: "Ready?",
     description: "Your first batch is one tap away!",
   },
@@ -81,9 +81,12 @@ export default function IntroPopup() {
     >
       <div className="w-full max-w-sm rounded-[24px] bg-[#b9b5cf] p-2 shadow-[0_0_0_3px_#8f8ba9,inset_0_0_0_2px_#e4e1f2,0_14px_26px_rgba(0,0,0,.4)]">
         <div className="space-y-3 rounded-xl bg-[#f7f6fd] p-4 text-center shadow-[inset_0_2px_8px_rgba(0,0,0,.25)]">
-          {/* mascot placeholder */}
-          <div className="grid h-36 place-items-center rounded-xl border-2 border-dashed border-[#b6c3ea] text-sm text-[#6b6f8a]">
-            [mascot: {s.pose}]
+          <div className="flex h-36 w-full items-center justify-center p-2">
+            <img
+              src={`images/mebatch/mebatch-${s.pose}.png`}
+              alt={s.text}
+              className="h-full w-full object-contain object-bottom drop-shadow-[0_4px_8px_rgba(0,0,0,0.08)]"
+            />
           </div>
           <div aria-live="polite">
             <p className="text-lg font-bold">{s.text}</p>
@@ -119,7 +122,12 @@ export default function IntroPopup() {
                   Back
                 </button>
               )}
-              <button type="button" onClick={() => (last ? close() : setI(i + 1))} className="btn btn-green" autoFocus>
+              <button
+                type="button"
+                onClick={() => (last ? close() : setI(i + 1))}
+                className="btn btn-green"
+                autoFocus
+              >
                 {last ? "Let's go" : "Next"}
               </button>
             </div>

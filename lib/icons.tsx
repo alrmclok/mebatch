@@ -31,7 +31,7 @@ export const MODE_ICON = {
 export function Orb({ icon: Icon, color = "bg-sky-300", size = 64, wobble = false }: { icon: LucideIcon; color?: string; size?: number; wobble?: boolean }) {
   return (
     <span
-      className={`relative inline-grid shrink-0 place-items-center rounded-full ring-1 ring-black/20 shadow-[inset_0_-6px_10px_rgba(0,0,0,.18),0_3px_5px_rgba(0,0,0,.25)] ${wobble ? "transition-transform hover:-rotate-10 hover:scale-105" : ""} ${color}`}
+      className={`cursor-pointer relative inline-grid shrink-0 place-items-center rounded-full ring-1 ring-black/20 shadow-[inset_0_-6px_10px_rgba(0,0,0,.18),0_3px_5px_rgba(0,0,0,.25)] ${wobble ? "transition-transform hover:-rotate-10 hover:scale-105" : ""} ${color}`}
       style={{ width: size, height: size }}
     >
       <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_22%,rgba(255,255,255,.85),transparent_55%)]" />

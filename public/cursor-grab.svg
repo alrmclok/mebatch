@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="grab-face" x1="6" y1="6" x2="26" y2="29" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".58" stop-color="#F4F1FF"/><stop offset="1" stop-color="#C9C5F5"/></linearGradient>
+    <linearGradient id="grab-rim" x1="6" y1="6" x2="26" y2="29" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7477D1"/><stop offset="1" stop-color="#303365"/></linearGradient>
+  </defs>
+  <path d="M9.5 28.5C7.4 28.5 6.5 27.2 6.5 25.2V17.2C6.5 15.6 7.6 14.6 9 14.6V9A1.6 1.6 0 0 1 12.2 9V14.6H12.8V7.4A1.6 1.6 0 0 1 16 7.4V14.6H16.6V8.4A1.6 1.6 0 0 1 19.8 8.4V14.6H20.4V10.4A1.6 1.6 0 0 1 23.6 10.4V15.2C25 15.2 26 16.2 26 17.8V25.2C26 27.2 25.1 28.5 23 28.5Z" fill="#34366F" opacity=".2" transform="translate(1 1)"/>
+  <path d="M9.5 28.5C7.4 28.5 6.5 27.2 6.5 25.2V17.2C6.5 15.6 7.6 14.6 9 14.6V9A1.6 1.6 0 0 1 12.2 9V14.6H12.8V7.4A1.6 1.6 0 0 1 16 7.4V14.6H16.6V8.4A1.6 1.6 0 0 1 19.8 8.4V14.6H20.4V10.4A1.6 1.6 0 0 1 23.6 10.4V15.2C25 15.2 26 16.2 26 17.8V25.2C26 27.2 25.1 28.5 23 28.5Z" fill="url(#grab-face)" stroke="url(#grab-rim)" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M9.6 25.5V19" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

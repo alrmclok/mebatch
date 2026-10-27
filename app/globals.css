@@ -8,6 +8,19 @@ body {
   background: linear-gradient(#1b8ea6 0, #2aa9bf 82%, #8be6ef 82%) fixed; /* teal + light bottom stripe */
 }
 
+*,html,body{cursor:url("/cursor-default.svg") 3 2,auto}
+a,a *,button,button *,.btn,.btn *,select,[role="button"],[role="button"] *,input[type="checkbox"],input[type="radio"],label,label *,summary{cursor:url("/cursor-pointer.svg") 12 5,pointer !important}
+input:not([type="checkbox"]):not([type="radio"]),textarea,[contenteditable="true"],.custom-text-zone{cursor:url("/cursor-text.svg") 16 16,text !important}
+.is-loading,.is-loading *,[aria-busy="true"],[aria-busy="true"] *{cursor:url("/cursor-wait.svg") 15 16,wait !important}
+.draggable,[draggable="true"],.can-grab,[data-grab],.carousel,.map{cursor:url("/cursor-grab.svg") 16 20,grab !important}
+.dragging,.dragging *,.is-grabbing,.is-grabbing *{cursor:url("/cursor-grabbing.svg") 16 20,grabbing !important}
+[data-move],.movable,.resizable,.panel-handle,.splitter{cursor:url("/cursor-move.svg") 16 16,move !important}
+[data-help],[data-help] *,.help,.help *,.info,.tooltip-trigger,.faq-item{cursor:url("/cursor-help.svg") 16 16,help !important}
+[data-zoom-in],.lightbox,.gallery img,.zoom-in{cursor:url("/cursor-zoom-in.svg") 13 13,zoom-in !important}
+[data-zoom-out],.zoom-out{cursor:url("/cursor-zoom-out.svg") 13 13,zoom-out !important}
+[data-crosshair],.canvas,.crop,.draw-area,.selection-area{cursor:url("/cursor-crosshair.svg") 16 16,crosshair !important}
+button:disabled,button:disabled *,.btn:disabled,.btn:disabled *,[aria-disabled="true"],[aria-disabled="true"] *,[disabled],[disabled] *{cursor:url("/cursor-blocked.svg") 16 16,not-allowed !important}
+
 .logo { font-family: var(--font-display), Georgia, serif; font-style: italic; font-weight: 700; }
 @media (max-width: 639px) { .btn { padding: 0 .9rem; font-size: .95rem; } }
 

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="ptr-face" x1="8" y1="3" x2="23" y2="29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".58" stop-color="#F4F1FF"/>
+      <stop offset="1" stop-color="#C9C5F5"/>
+    </linearGradient>
+    <linearGradient id="ptr-rim" x1="8" y1="3" x2="25" y2="29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7477D1"/>
+      <stop offset="1" stop-color="#303365"/>
+    </linearGradient>
+  </defs>
+  <path d="M11.8 28.3c-1.25 0-2.35-.65-3-1.75l-4-6.95c-.7-1.2-.35-2.7.75-3.5 1.05-.75 2.450-.5 3.3.45l1.45 1.65V5.9c0-1.4 1.05-2.45 2.4-2.45s2.4 1.05 2.4 2.45v7.35c.45-.35.95-.5 1.5-.5 1 0 1.8.55 2.2 1.4.45-.3.95-.45 1.5-.45 1.05 0 1.9.65 2.25 1.55.4-.25.8-.35 1.3-.35 1.4 0 2.4 1.05 2.4 2.45v3.95c0 3.55-2.6 6.45-6.25 6.45Z" fill="#34366F" opacity=".2" transform="translate(1 1)"/>
+  <path d="M11.8 28.3c-1.25 0-2.35-.65-3-1.750l-4-6.95c-.7-1.2-.35-2.7.75-3.5 1.05-.75 2.45-.5 3.3.45l1.45 1.65V5.9c0-1.4 1.05-2.45 2.4-2.45s2.4 1.05 2.4 2.45v7.35c.45-.35.95-.5 1.5-.5 1 0 1.8.55 2.2 1.4.45-.3.95-.45 1.5-.45 1.05 0 1.9.65 2.25 1.55.4-.25.8-.35 1.3-.35 1.4 0 2.4 1.05 2.4 2.45v3.95c0 3.55-2.6 6.45-6.25 6.45Z" fill="url(#ptr-face)" stroke="url(#ptr-rim)" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M12.7 6.1v12.1m4.1-3.2v2.2m3.7-1.1v2.1" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="help-face" x1="5" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".58" stop-color="#F4F1FF"/><stop offset="1" stop-color="#C9C5F5"/></linearGradient>
+    <linearGradient id="help-rim" x1="5" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7477D1"/><stop offset="1" stop-color="#303365"/></linearGradient>
+  </defs>
+  <circle cx="15.5" cy="16" r="11.5" fill="#34366F" opacity=".2" transform="translate(1 1)"/>
+  <circle cx="15.5" cy="16" r="11.5" fill="url(#help-face)" stroke="url(#help-rim)" stroke-width="1.7"/>
+  <path d="M8 12.5A8.5 8.5 0 0 1 12.5 8" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M12.3 13.2C12.3 11.2 13.8 9.7 15.7 9.7S19.1 11.2 19.1 13.1C19.1 15.6 15.8 15.7 15.8 18.1V19.2" fill="none" stroke="url(#help-rim)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.7 22.4H15.71" fill="none" stroke="url(#help-rim)" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

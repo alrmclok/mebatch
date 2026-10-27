@@ -256,9 +256,43 @@ export default function Home() {
           <Download size={20} /> Receive
         </button>
       </div>
-      <p className="text-center text-sm opacity-60">
-        [mascot: {tab === "send" ? "tossing a file" : "catching a file"}]
-      </p>
+      <div className="flex h-36 w-full items-center justify-center p-2 mb-2">
+        {done ? (
+          // State 1: Upload Complete (Celebrating)
+          <div className="flex flex-col items-center justify-center h-full w-full">
+            <img
+              src="images/mebatch/mebatch-placeholder.png"
+              alt="MeBatch mascot celebrating successful upload"
+              className="h-28 object-contain object-bottom"
+            />
+            <p className="text-center text-sm opacity-60 mt-1">successful!!</p>
+          </div>
+        ) : tab === "send" ? (
+          // State 2: Sending Tab Active
+          <div className="flex flex-col items-center justify-center h-full w-full">
+            <img
+              src="images/mebatch/mebatch-placeholder.png"
+              alt="MeBatch mascot tossing a file"
+              className="h-28 object-contain object-bottom"
+            />
+            <p className="text-center text-sm opacity-60 mt-1">
+              tossing a file!!
+            </p>
+          </div>
+        ) : (
+          // State 3: Receiving Tab Active
+          <div className="flex flex-col items-center justify-center h-full w-full">
+            <img
+              src="images/mebatch/mebatch-placeholder.png"
+              alt="MeBatch mascot catching a file"
+              className="h-28 object-contain object-bottom"
+            />
+            <p className="text-center text-sm opacity-60 mt-1">
+              catching a file..
+            </p>
+          </div>
+        )}
+      </div>
 
       {tab === "receive" && (
         <div className="space-y-3">
@@ -478,7 +512,8 @@ export default function Home() {
 
       {tab === "send" && done && (
         <div className="flex flex-col items-center gap-3 text-center">
-          <p className="text-sm opacity-60">[mascot: celebrating]</p>
+          {/* Removed the old mascot block from here since it now displays at the top */}
+
           <div className="break-all text-2xl sm:text-3xl font-black tracking-widest">
             {done.slug}
           </div>
@@ -505,9 +540,16 @@ export default function Home() {
       <section className="panel">
         <h2 className="mb-3 text-lg font-extrabold">Active Batch</h2>
         {active.length === 0 ? (
-          <p className="text-center text-sm opacity-70">
-            [mascot: dancing] Nothing here yet
-          </p>
+          <div className="flex flex-col items-center justify-center h-full w-full">
+            <img
+              src="images/mebatch/mebatch-placeholder.png"
+              alt="MeBatch mascot catching a file"
+              className="h-28 object-contain object-bottom"
+            />
+            <p className="text-center text-sm opacity-60 mt-1">
+              nothing here yet..
+            </p>
+          </div>
         ) : (
           <div className="flex items-center gap-2">
             {pages > 1 && (
@@ -557,7 +599,7 @@ export default function Home() {
       </section>
       <p className="text-xs opacity-80">
         Fan project, not affiliated with Inanimate Insanity.{" "}
-        <button type="button" onClick={replayIntro} className="underline">
+        <button data-help type="button" onClick={replayIntro} className="underline">
           Replay intro
         </button>
       </p>
