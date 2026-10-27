@@ -3,7 +3,6 @@
     <linearGradient id="mv-face" x1="5" y1="3" x2="27" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".58" stop-color="#F4F1FF"/><stop offset="1" stop-color="#C9C5F5"/></linearGradient>
     <linearGradient id="mv-rim" x1="5" y1="3" x2="27" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7477D1"/><stop offset="1" stop-color="#303365"/></linearGradient>
   </defs>
-  <path d="M16 3L20 8H17.4V13.6H22V11L27 15.5L22 20V17.4H17.4V23H20L16 28L12 23H14.6V17.4H10V20L5 15.5L10 11V13.6H14.6V8Z" fill="#34366F" opacity=".2" transform="translate(1 1)"/>
-  <path d="M16 3L20 8H17.4V13.6H22V11L27 15.5L22 20V17.4H17.4V23H20L16 28L12 23H14.6V17.4H10V20L5 15.5L10 11V13.6H14.6V8Z" fill="url(#mv-face)" stroke="url(#mv-rim)" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M15.2 8.5V13" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M16 4L19.6 9.6H17.7V14.3H22.4V12.6L28 16L22.4 19.4V17.7H17.7V22.4H19.6L16 28L12.4 22.4H14.3V17.7H9.6V19.4L4 16L9.6 12.6V14.3H14.3V9.6H12.4Z" fill="#34366F" opacity=".2" transform="translate(1 1)"/>
+  <path d="M16 4L19.6 9.6H17.7V14.3H22.4V12.6L28 16L22.4 19.4V17.7H17.7V22.4H19.6L16 28L12.4 22.4H14.3V17.7H9.6V19.4L4 16L9.6 12.6V14.3H14.3V9.6H12.4Z" fill="url(#mv-face)" stroke="url(#mv-rim)" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
 </svg>

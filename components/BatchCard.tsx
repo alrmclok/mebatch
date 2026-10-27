@@ -127,6 +127,7 @@ export default function BatchCard({
 }) {
   const [msg, setMsg] = useState("");
   const [reported, setReported] = useState(false);
+  const [qrBig, setQrBig] = useState(false);
   useEffect(() => {
     fetch(`/api/batches/${b.slug}/report?deviceId=${deviceId()}`)
       .then((r) => r.json())
@@ -227,7 +228,14 @@ export default function BatchCard({
             )}
           </div>
         </div>
-        <QRCodeSVG value={url()} size={88} />
+        <button
+          type="button"
+          className={qrBig ? "zoom-out" : "zoom-in"}
+          aria-label={qrBig ? "Shrink QR code" : "Enlarge QR code"}
+          onClick={() => setQrBig((v) => !v)}
+        >
+          <QRCodeSVG value={url()} size={qrBig ? 168 : 88} />
+        </button>
       </div>
 
       {b.text && (

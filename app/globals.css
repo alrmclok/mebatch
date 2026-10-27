@@ -45,3 +45,14 @@ button:disabled,button:disabled *,.btn:disabled,.btn:disabled *,[aria-disabled="
 
 :focus-visible { outline: 3px solid #6a4cff; outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.zoom-in,.zoom-in *{cursor:url("/cursor-zoom-in.svg") 16 16,zoom-in !important}
+.zoom-out,.zoom-out *{cursor:url("/cursor-zoom-out.svg") 16 16,zoom-out !important}

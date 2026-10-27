@@ -70,6 +70,7 @@ export default function Home() {
   const [active, setActive] = useState<ActiveItem[]>([]);
   const [pg, setPg] = useState(0);
   const [drag, setDrag] = useState(false);
+  const [qrBig, setQrBig] = useState(false);
   const pending = useRef<{
     slug: string;
     key: string;
@@ -372,7 +373,7 @@ export default function Home() {
           )}
 
           {showFiles && (
-            <label className="block cursor-pointer rounded-2xl border-[3px] border-dashed border-[var(--lav)] bg-white p-5 sm:p-7 text-center font-semibold">
+            <label className="block rounded-2xl border-[3px] border-dashed border-[var(--lav)] bg-white p-5 sm:p-7 text-center font-semibold">
               <input
                 type="file"
                 multiple
@@ -512,12 +513,17 @@ export default function Home() {
 
       {tab === "send" && done && (
         <div className="flex flex-col items-center gap-3 text-center">
-          {/* Removed the old mascot block from here since it now displays at the top */}
-
           <div className="break-all text-2xl sm:text-3xl font-black tracking-widest">
             {done.slug}
           </div>
-          <QRCodeSVG value={link(done.slug)} size={140} />
+          <button
+            type="button"
+            className={qrBig ? "zoom-out" : "zoom-in"}
+            aria-label={qrBig ? "Shrink QR code" : "Enlarge QR code"}
+            onClick={() => setQrBig((v) => !v)}
+          >
+            <QRCodeSVG value={link(done.slug)} size={qrBig ? 280 : 140} />
+          </button>
           <div className="flex flex-wrap justify-center gap-2">
             <CopyButton text={() => link(done.slug)} />
             <CopyButton
@@ -599,7 +605,12 @@ export default function Home() {
       </section>
       <p className="text-xs opacity-80">
         Fan project, not affiliated with Inanimate Insanity.{" "}
-        <button data-help type="button" onClick={replayIntro} className="underline">
+        <button
+          data-help
+          type="button"
+          onClick={replayIntro}
+          className="underline"
+        >
           Replay intro
         </button>
       </p>
